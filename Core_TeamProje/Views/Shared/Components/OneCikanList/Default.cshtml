@@ -1,0 +1,23 @@
+﻿@using EntityLayer.Concreate
+@model List<OneCikan>
+
+<header>
+    <div class="cover bg-light">
+        <div class="container px-2">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-6">
+                        <div class="mt-5 pt-lg-5">
+                            <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">@item.Header </h1>
+                            <p class="lead fw-normal mt-4" data-aos="fade-up" data-aos-delay="100">@item.Description</p>
+                            <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a class="btn btn-primary shadow-sm mt-1 me-2" href="#contact">Hadi Başlayalım <i class="fas fa-arrow-right ms-1"></i></a><a class="btn btn-outline-secondary mt-1" data-bigpicture="{&quot;ytSrc&quot;: &quot;aqz-KE-bpKQ&quot;}" href="@item.VideoUrl"><i class="fas fa-play-circle me-1"></i> Watch Video</a></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 p-3 pe-lg-0" data-aos="fade-left" data-aos-delay="100"><img class="pt-2 img-fluid" src="@item.ImageUrl" alt="hello" /></div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="wave-bg"></div>
+</header>

@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concreate.WriterMessage
+
+@{
+    ViewData["Title"] = "AdminDetails";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#Modal1">
+    Mesaj Görüntüle
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Mesaj Detay Pencereesi</h4>
+            </div>
+            <form method="post" action="/Message/MDetails/">
+                <div class="modal-body">
+                    @Html.HiddenFor(m => m.WriterMessageID, new { @class = "form-control" })
+                    <br />
+                    <label>Gönderen</label>
+                    @Html.TextBoxFor(m => m.Gonderenadi, new { @class = "form-control" })
+                    <br />
+                    <label>Alıcı</label>
+                    @Html.TextBoxFor(m => m.Aliciadi, new { @class = "form-control" })
+                    <br />
+                    <label>Tarih</label>
+                    @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+                    <br />
+                    <label>Mesaj</label>
+                    @Html.TextAreaFor(m => m.MessageContent,6,3, new { @class = "form-control" })
+                    <br />
+                    <a type="button" class="btn btn-warning" data-dismiss="modal" href="#">Cevapla</a>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Geri</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

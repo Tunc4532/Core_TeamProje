@@ -1,0 +1,41 @@
+﻿@using EntityLayer.Concreate
+@model List<EkipTanitim>
+
+
+@{
+    ViewData["Title"] = "SocialeList";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Ekip Paneli</h3>
+</div>
+<table class="table align-items-center table-flush">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Sosyal Medya 1</th>
+            <th>Sosyal Medya 2</th>
+            <th>Sosyal Medya 3</th>
+            <th>Sosyal Medya 4</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <th>@item.EkipTanitimID</th>
+                <td>@item.socialName</td>
+                <td>@item.InsName</td>
+                <td>@item.FaceName</td>
+                <td>@item.LinName</td>
+                <td><a href="/SocialMedia/DeleteESocialMedıa/@item.EkipTanitimID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/SocialMedia/EditESocialMedıa/@item.EkipTanitimID" class="btn btn-outline-info">Güncelle</a></td>
+            </tr>
+        </tbody>
+    }
+</table>
+<br />
+<a href="/SocialMedia/AddESocialMedıa/" class="btn btn-outline-primary">Takım Arkadaşı Ekle</a>

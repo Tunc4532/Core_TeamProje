@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concreate
+@model List<BizimleCalisin>
+
+   
+<div class="container-narrow">
+    <div class="text-center mb-4">
+            <h2 class="marker marker-center">Bizimle Çalışın</h2>
+    </div>
+    <div class="text-center">
+            <p class="mx-auto mb-3" style="max-width:800px">
+                Üst düzey genel bakışlar için sağlam bir özet sağlamak üzere çevik çerçevelerden yararlanın. Kurumsal stratejiye yinelemeli yaklaşımlar, genel değer önerisini ilerletmek için işbirlikçi düşünceyi teşvik eder.
+            </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row py-3">
+        @foreach (var item in Model)
+        {
+        <div class="col-md-6 col-lg-3 text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="border rounded p-3 bg-light mb-3">
+                <div class="text-center text-secondary display-3"><i class="@item.IconUrl"></i></div>
+                <h3 class="h4 mt-2">@item.Tittle</h3>
+                <p class="text-small">@item.DescriptionTwo</p>
+            </div>
+        </div>
+        }
+    </div>
+</div>
+

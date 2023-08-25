@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concreate.EkipTanitim
+
+@{
+    ViewData["Title"] = "AddEkipTanitim";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Ekip Arkadaşı Ekleme Paneli</h3>
+</div>
+@using (Html.BeginForm("AddEkipTanitim", "EkipTanitim", FormMethod.Post))
+{
+    <br />
+    @Html.Label("Ad Soyad")
+    @Html.TextBoxFor(x=>x.Name , new {@class = "form-control"})
+    <br />
+    @Html.Label("Unvan ")
+    @Html.TextBoxFor(x=>x.Meslek , new {@class = "form-control"})
+    <br />
+    @Html.Label("Görsel Url")
+    @Html.TextBoxFor(x=>x.ImageUrl , new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+}

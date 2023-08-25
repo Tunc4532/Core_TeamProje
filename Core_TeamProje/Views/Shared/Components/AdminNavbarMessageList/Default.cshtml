@@ -1,0 +1,43 @@
+﻿@using EntityLayer.Concreate
+@model List<WriterMessage>
+
+
+<div class="dropdown-menu dropdown-menu-xl  dropdown-menu-right  py-0 overflow-hidden">
+    <!-- Dropdown header -->
+    <div class="px-3 py-3">
+        <h6 class="text-sm text-muted m-0"><strong class="text-primary">Son Mesajlar</strong></h6>
+    </div>
+    <!-- List group -->
+    @foreach (var item in Model)
+    {
+        <div class="list-group list-group-flush">
+            <a href="/AdminMesage/AdminDetails/@item.WriterMessageID" class="list-group-item list-group-item-action">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <!-- Avatar -->
+                        <img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-2.jpg" class="avatar rounded-circle">
+                    </div>
+                    <div class="col ml--2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="mb-0 text-sm">@item.Gonderenadi bir yeni mesaj...</h4>
+                            </div>
+                            <div class="text-right text-muted">
+                                <small>@item.Date</small>
+                            </div>
+                        </div>
+                        <p class="text-sm mb-0">@item.MessageContent</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+    <!-- View all -->
+    <a href="/AdminMesage/ReciveMessageLis/" class="dropdown-item text-center text-primary font-weight-bold py-3">Tümünü Gör</a>
+</div>
+
+
+@*<img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-5.jpg" class="avatar rounded-circle">
+<img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-3.jpg" class="avatar rounded-circle">
+<img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-2.jpg" class="avatar rounded-circle">
+<img alt="Image placeholder" src="~/argon-dashboard-master/assets/img/theme/team-1.jpg" class="avatar rounded-circle">*@

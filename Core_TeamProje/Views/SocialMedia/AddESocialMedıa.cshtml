@@ -1,0 +1,62 @@
+﻿@model EntityLayer.Concreate.EkipTanitim
+
+
+@{
+    ViewData["Title"] = "AddESocialMedıa";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Yeni Sosyal İletişim Kanalı Ekleme Paneli</h3>
+</div>
+@using (Html.BeginForm("AddESocialMedıa", "SocialMedia", FormMethod.Post))
+{
+    <br />
+    @Html.Label("Sosyal 1")
+    @Html.TextBoxFor(x=>x.socialName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 1 Icon ")
+    @Html.TextBoxFor(x=>x.socialIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 1 Url")
+    @Html.TextBoxFor(x=>x.socialUrl , new {@class = "form-control"})
+    <br />
+
+
+    @Html.Label("Sosyal 2")
+    @Html.TextBoxFor(x=>x.FaceName, new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 2 Icon ")
+    @Html.TextBoxFor(x=>x.FaceIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 2 Url")
+    @Html.TextBoxFor(x=>x.FaceUrl , new {@class = "form-control"})
+
+
+
+      <br />
+    @Html.Label("Sosyal 3")
+    @Html.TextBoxFor(x=>x.InsName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 3 Icon ")
+    @Html.TextBoxFor(x=>x.InsName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 3 Url")
+    @Html.TextBoxFor(x=>x.InsUrl , new {@class = "form-control"})
+    <br />
+
+
+
+    @Html.Label("Sosyal 4")
+    @Html.TextBoxFor(x=>x.LinName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 4 Icon ")
+    @Html.TextBoxFor(x=>x.LinIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 4 Url")
+    @Html.TextBoxFor(x=>x.LinUrl , new {@class = "form-control"})
+    <br />
+
+
+    <button class="btn btn-outline-primary">Kaydet</button>
+}

@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concreate.OneCikan
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Öne Çıkanlar Güncelleme Paneli</h3>
+</div>
+@using (Html.BeginForm("Index", "OneCikan", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.OneCikanID)
+    <br />
+    @Html.Label("Başlık")
+    @Html.TextBoxFor(x=>x.Header , new {@class = "form-control"})
+    <br />
+    @Html.Label("Görsel Url ")
+    @Html.TextBoxFor(x=>x.ImageUrl , new {@class = "form-control"})
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(x=>x.Description ,6,3, new {@class = "form-control"})
+    <br />
+    @Html.Label("Vide Url ")
+    @Html.TextBoxFor(x=>x.VideoUrl , new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+}

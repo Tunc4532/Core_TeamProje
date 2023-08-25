@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concreate
+@model List<Hizmetler>
+
+<div class="section bg-light py-3 py-lg-5 px-2 px-lg-4" id="services">
+    <div class="container-narrow">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Hizmetlerimiz</h2> 
+        </div>
+        <div class="text-center">
+            <p class="mx-auto mb-3" style="max-width:800px">Gerçek zamanlı şemalar için zamanında teslim edilebilirleri hızla en üst düzeye çıkarın. İşlevsel çözümler olmadan tıklama ve harç çözümlerini önemli ölçüde koruyun.</p>
+        </div>
+        <div class="row py-3">
+            @foreach(var item in Model)
+            {
+            <div class="col-md-4 text-center mb-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-white border rounded-circle d-inline-block p-2"><img class="p-2" src="@item.IconUrl" width="96" height="96" alt="web design" /></div>
+                <div class="bg-white border rounded p-3 mt-n4">
+                    <div class="h5 mt-3">@item.Tittle</div>
+                    <p class="text-small">@item.DescriptionTwo</p><a class="btn btn-link" href="#!">Daha Faza Bilgi Edinin <i class="fas fa-arrow-right ms-1"></i></a>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>

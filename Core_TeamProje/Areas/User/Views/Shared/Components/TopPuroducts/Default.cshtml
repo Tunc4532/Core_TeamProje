@@ -1,0 +1,109 @@
+﻿@using EntityLayer.Concreate
+@model List<Portföy>
+
+<div class="row">
+    <div class="col-md-7 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-title mb-0">Projelerimiz</p>
+                <div class="table-responsive">
+                    <table class="table table-striped table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Proje</th>
+                                <th>Bul</th>
+                                <th>Görsel</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <th>
+                                        <div class="media align-items-center">
+                                            <a href="@item.ImageUrlTwo" class="avatar rounded-circle mr-3">
+                                               Git
+                                            </a>
+                                        </div>
+                                    </th>
+                                    <th scope="row">
+                                        <div class="media align-items-center">
+                                            <a href="#" class="avatar rounded-circle mr-3">
+                                                <img alt="Image placeholder" src="@item.ImageUrl" width="50" height="28">
+                                            </a>
+                                        </div>
+                                    </th>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-5 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yapılacaklar Listesi</h4>
+                <div class="list-wrapper pt-2">
+                    <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                        <li>
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox">
+                                    Yeni projeler githuba yüklenecek
+                                </label>
+                            </div>
+                            <i class="remove ti-close"></i>
+                        </li>
+                        <li class="completed">
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox" checked>
+                                    Linkedn profil paneli güncellenecek
+                                </label>
+                            </div>
+                            <i class="remove ti-close"></i>
+                        </li>
+                        <li>
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox">
+                                    Youtube mini coe deslerine başlanacak
+                                </label>
+                            </div>
+                            <i class="remove ti-close"></i>
+                        </li>
+                        <li class="completed">
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox" checked>
+                                    Özel ders formatında .Net eğitimi izlenecek
+                                </label>
+                            </div>
+                            <i class="remove ti-close"></i>
+                        </li>
+                        <li>
+                            <div class="form-check form-check-flat">
+                                <label class="form-check-label">
+                                    <input class="checkbox" type="checkbox">
+                                    Cv projesi İle Team Güncellenecek
+                                </label>
+                            </div>
+                            <i class="remove ti-close"></i>
+                        </li>
+                    </ul>
+                </div>
+                <div class="add-items d-flex mb-0 mt-2">
+                    <input type="text" class="form-control todo-list-input" placeholder="Yeni Birşey Ekleyin...">
+                    <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

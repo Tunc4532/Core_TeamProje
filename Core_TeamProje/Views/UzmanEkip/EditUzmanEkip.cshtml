@@ -1,0 +1,22 @@
+﻿@model EntityLayer.Concreate.UzmanEkip
+
+@{
+    ViewData["Title"] = "EditUzmanEkip";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Uzman Ekip Hizmet Güncelleme Paneli</h3>
+</div>
+@using (Html.BeginForm("EditUzmanEkip", "UzmanEkip",FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.UzmanEkipID)
+    <br />
+    @Html.Label("Hizmet Başlığı")
+    @Html.TextBoxFor(x=>x.Tittle , new {@class = "form-control"})
+    <br />
+    @Html.Label("Hizmet Yüzdesi")
+    @Html.TextBoxFor(x=>x.Value , new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+}

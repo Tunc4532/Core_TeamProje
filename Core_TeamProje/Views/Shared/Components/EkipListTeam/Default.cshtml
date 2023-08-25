@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concreate
+@model List<EkipTanitim>
+
+<div class="col-xl-8">
+    <div class="card">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">Ekip Listesi</h3>
+                </div>
+                <div class="col text-right">
+                    <a href="#!" class="btn btn-sm btn-primary">Tümünü Gör</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <!-- Projects table -->
+
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Görsel</th>
+                        <th scope="col">Ad Soyad</th>
+                        <th scope="col">Meslek</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+
+                        <tr>
+                            <td>
+                                @item.EkipTanitimID
+                            </td>
+                            <th scope="row">
+                                <div class="media align-items-center">
+                                    <a href="#" class="avatar rounded-circle mr-3">
+                                        <img alt="Image placeholder" src="@item.ImageUrl">
+                                    </a>
+                                </div>
+                            </th>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Meslek
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

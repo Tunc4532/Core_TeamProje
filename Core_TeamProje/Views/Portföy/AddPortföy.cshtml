@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concreate.Portföy
+
+@{
+    ViewData["Title"] = "AddPortföy";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Proje Ekleme Paneli</h3>
+</div>
+@using (Html.BeginForm("AddPortföy", "Portföy", FormMethod.Post))
+{
+    <br />
+    @Html.Label("Proje Adı")
+    @Html.TextBoxFor(x=>x.Name , new {@class = "form-control"})
+    <br />
+    @Html.Label("Image Url ")
+    @Html.TextBoxFor(x=>x.ImageUrl , new {@class = "form-control"})
+    <br />
+    @Html.Label("Poject Url")
+    @Html.TextBoxFor(x=>x.ProjectUrl , new {@class = "form-control"})
+    <br />
+    <br />
+    @Html.Label("Platform Url")
+    @Html.TextBoxFor(x=>x.ImageUrlTwo , new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Kaydet</button>
+}

@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concreate
+@model List<Message>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Siteden Gelen Mesajlar</h3>
+</div>
+<table class="table align-items-center table-flush">
+    <thead class="thead-light">
+        <tr>
+            <th>#</th>
+            <th>Gönderen</th>
+            <th>Mail</th>
+            <th>Tarih</th>
+            <th>Sil</th>
+            <th>Mesajı Görüntüle</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <th>@item.MessageID</th>
+                <th>@item.Name</th>
+                <td>@item.Mail</td>
+                <td>@item.Date</td>
+                <td><a href="/Message/MesDelete/@item.MessageID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Message/MDetails/@item.MessageID" class="btn btn-outline-info">Görüntüle</a></td>
+            </tr>
+        </tbody>
+    }
+</table>

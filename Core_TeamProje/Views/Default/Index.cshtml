@@ -1,0 +1,200 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<!-- upto 2 directory depth-->
+<html lang="en-US">
+
+@await Html.PartialAsync("HeaderPartial")
+
+<body id="top">
+
+    @await Html.PartialAsync("NavBarPartial")
+
+    <div class="page-content">
+        <div id="content">
+           
+            @await Component.InvokeAsync("OneCikanList")
+
+            <div class="section pt-3 pt-lg-5 px-2 px-lg-4" id="about">
+
+                @await Component.InvokeAsync("BizimleCalisinList")
+
+                <div class="container">
+
+                    @await Component.InvokeAsync("CevikEkipList")
+
+                    @await Component.InvokeAsync("UzmanEkipList")
+
+                    @await Component.InvokeAsync("UVadeliOrtakList")
+
+                </div>
+            </div>
+
+            <div class="section py-3 py-lg-5 px-2 px-lg-4" id="clients">
+                <div class="container-narrow">
+                    <div class="text-center mb-4">
+                        <h2 class="marker marker-center">Güvenler</h2>
+                    </div>
+                    <div class="text-center">
+                        <p class="mx-auto mb-3" style="max-width:800px">Tak ve çalıştır ağları aracılığıyla güçlendirilmiş pazarları işbirliği içinde yönetin.</p>
+                    </div>
+                    <div class="text-center" data-aos="zoom-in-up" data-aos-delay="100">
+                        <div class="mx-auto mb-3"> <img class="p-1" src="~/SüperAjans/images/clients/client1.png" /><img class="p-1" src="~/SüperAjans/images/clients/client2.png" /><img class="p-1" src="~/SüperAjans/images/clients/client3.png" /><img class="p-1" src="~/SüperAjans/images/clients/client4.png" /><img class="p-1" src="~/SüperAjans/images/clients/client5.png" /><img class="p-1" src="~/SüperAjans/images/clients/client6.png" /><img class="p-1" src="~/SüperAjans/images/clients/client7.png" /></div>
+                    </div>
+                </div>
+            </div>
+
+            @await Component.InvokeAsync("HizmetlerList")
+
+            <div class="section bg-secondary text-light py-3 py-lg-5 px-2 px-lg-4" id="stats">
+                <div class="container-narrow">
+                    <div class="row px-4">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="d-flex py-2">
+                                <i class="mr-3 fas fa-clipboard-check fa-4x fa-fw"></i>
+                                <div class="ms-1">
+                                    <div class="h2 mb-1 purecounter" data-purecounter-start="0" data-purecounter-end="68" data-purecounter-duration="1">68</div>
+                                    <div class="h6">
+                                        Yapılan Projeler
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="d-flex py-2">
+                                <i class="mr-3 fas fa-smile fa-4x fa-fw"></i>
+                                <div class="ms-1">
+                                    <div class="h2 mb-1 purecounter" data-purecounter-start="0" data-purecounter-end="145" data-purecounter-duration="1">145</div>
+                                    <div class="h6">Mutlu Müşteriler</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="d-flex py-2">
+                                <i class="mr-3 fas fa-file-alt fa-4x fa-fw"></i>
+                                <div class="ms-1">
+                                    <div class="h2 mb-1 purecounter" data-purecounter-start="0" data-purecounter-end="256" data-purecounter-duration="1">256</div>
+                                    <div class="h6">Takdirler</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="d-flex py-2">
+                                <i class="mr-3 fas fa-clock fa-4x fa-fw"></i>
+                                <div class="ms-1">
+                                    <div class="h2 mb-1 purecounter" data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1">24</div>
+                                    <div class="h6">Destek Saatleri</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @await Component.InvokeAsync("EkipTanitimList")
+
+            @await Component.InvokeAsync("PortföyList")
+
+            @await Component.InvokeAsync("TestimonialList")
+
+            <div class="section py-3 py-lg-5 px-2 px-lg-4" id="contact">
+                <div class="container-narrow">
+                    <div class="text-center mb-5">
+                        <h2 class="marker marker-center">Bize Ulaşın</h2>
+                    </div>
+                    <div class="row">
+
+                       @* @await Component.InvokeAsync("SendMessage")*@
+                        @await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+
+                        @await Component.InvokeAsync("ContactDetails")
+
+                    </div>
+                </div>
+            </div>
+            <footer class="py-5 px-2 bg-light" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 mb-3">
+                            <div class="mb-3">
+                                <div class="h4">ÇindaSoft</div>
+                                <p class="text-muted">Üst düzey genel bakışlar için sağlam bir özet sağlamak üzere çevik çerçevelerden yararlanın.</p>
+
+
+                               @* Burası sosyal medya alanı modeli var entegre edilecek*@
+                                <div class="social-nav">
+                                    <nav role="navigation">
+                                        <ul class="nav text-light">
+                                            <li class="nav-item"><a class="nav-link" href="#" title="Twitter"><i class="fab fa-twitter"></i><span class="menu-title sr-only">Twitter</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#" title="Facebook"><i class="fab fa-facebook"></i><span class="menu-title sr-only">Facebook</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#" title="Instagram"><i class="fab fa-instagram"></i><span class="menu-title sr-only">Instagram</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#" title="LinkedIn"><i class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#" title="Behance"><i class="fab fa-behance"></i><span class="menu-title sr-only">Behance</span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+  
+                            </div>
+                            <div class="text-small text-muted">
+                                <div class="mb-1">Telif Hakkı <strong>ÇindaSoft</strong>. Tüm hakları saklıdır.</div>
+                                <div>
+                                    <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->Design by <a href="https://templateflip.com/" target="_blank">TemplateFlip</a> 
+                                    <br />Back-end Developer <a href="https://twitter.com/cindas_tunc?lang=ca" target="_blank">ÇindaSoft</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-3">
+                            <div class="text-uppercase mb-2">Hizmetlerimiz</div>
+                            <div class="nav flex-column"><a class="nav-link px-0" href="#!">Tasarım</a>
+                                <a class="nav-link px-0" href="#!">Gelişme</a>
+                                <a class="nav-link px-0" href="#!">Marka</a>
+                                <a class="nav-link px-0" href="#!">Pazarlama</a></div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-3">
+                            <div class="text-uppercase mb-2">Ürünlerimiz</div>
+                            <div class="nav flex-column">
+                                <a class="nav-link px-0" href="/Default/Index#services">Hizmetler</a>
+                                <a class="nav-link px-0" href="/Default/Index#portfolio">Projelerimiz</a>
+                                <a class="nav-link px-0" href="/Default/Index#team">Takım</a>
+                                <a class="nav-link px-0" href="/Default/Index#contact">Fiyatlandırma</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-3">
+                            <div class="text-uppercase mb-2">Hakkımızda</div>
+                            <div class="nav flex-column">
+                                <a class="nav-link px-0" href="/Default/Index#about">Bizimle Çalışın</a>
+                                <a class="nav-link px-0" href="/Default/Index#contact">İletişim</a>
+                                <a class="nav-link px-0" href="/Default/Index#">Anasayfa</a>
+                                <a class="nav-link px-0" href="/Default/Index#!">Gizlilik</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-6 mb-3">
+                            <div class="text-uppercase mb-2">Bize Ulaşın</div>
+                            <div class="text-small">
+                                <address>
+                                    İzmir/Karşıyaka<br />
+                                    Sinop Üniversitesi<br />
+                                    Şehir Merkezi
+                                </address>
+                                <div class="mb-1"><strong>Telefon:</strong><br />+90 536 940 5526</div>
+                                <div class="mb-1"><strong>Mail:</strong><br />tunccindas7570@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <div id="scrolltop"><a class="btn btn-secondary" href="#top"><span class="icon"><i class="fas fa-angle-up fa-x"></i></span></a></div>
+    <script src="~/SüperAjans/scripts/imagesloaded.pkgd.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/masonry.pkgd.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/BigPicture.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/purecounter.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/bootstrap.bundle.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/aos.min.js?ver=1.2.0"></script>
+    <script src="~/SüperAjans/scripts/main.js?ver=1.2.0"></script>
+</body>
+</html>

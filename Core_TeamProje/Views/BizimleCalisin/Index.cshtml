@@ -1,0 +1,37 @@
+﻿@using EntityLayer.Concreate
+@model List<BizimleCalisin>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Bizimle Çalışın Hizmet Paneli</h3>
+</div>
+<table class="table align-items-center table-flush">
+    <thead class="thead-light">
+        <tr>
+            <th >#</th>
+            <th >Icon</th>
+            <th >Başlık</th>
+            <th >Açıklama</th>
+            <th >Sil</th>
+            <th >Güncelle</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+            <tr>
+                <th>@item.BizimleCalisinID</th>
+                <td>@item.Tittle</td>
+                <td>@item.DescriptionTwo</td>
+                <td><a href="/BizimleCalisin/DeleteBizimleCalisin/@item.BizimleCalisinID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/BizimleCalisin/EditBizimleCalisin/@item.BizimleCalisinID" class="btn btn-outline-info">Güncelle</a></td>
+            </tr>
+        </tbody>
+    }
+</table>
+<br />
+<a href="/BizimleCalisin/AddBizimleCalisin/" class="btn btn-outline-primary">Yeni Değer Gir</a>

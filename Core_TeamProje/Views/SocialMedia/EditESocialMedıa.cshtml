@@ -1,0 +1,71 @@
+﻿@model EntityLayer.Concreate.EkipTanitim
+
+@{
+    ViewData["Title"] = "EditESocialMedıa";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Sosyal medya ekip arkadaşı güncellenerek ekleme işlemi</h3>
+</div>
+@using (Html.BeginForm("EditESocialMedıa", "SocialMedia", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.EkipTanitimID)
+    <br />
+    @Html.Label("Ad Soyad")
+    @Html.TextBoxFor(x=>x.Name , new {@class = "form-control"})
+    <br />
+    @Html.Label("Unvan ")
+    @Html.TextBoxFor(x=>x.Meslek , new {@class = "form-control"})
+    <br />
+    @Html.Label("Görsel Url")
+    @Html.TextBoxFor(x=>x.ImageUrl , new {@class = "form-control"})
+    <br />
+
+    <br />
+    @Html.Label("Sosyal 1")
+    @Html.TextBoxFor(x=>x.socialName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 1 Icon ")
+    @Html.TextBoxFor(x=>x.socialIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 1 Url")
+    @Html.TextBoxFor(x=>x.socialUrl , new {@class = "form-control"})
+    <br />
+
+
+    @Html.Label("Sosyal 2")
+    @Html.TextBoxFor(x=>x.FaceName, new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 2 Icon ")
+    @Html.TextBoxFor(x=>x.FaceIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 2 Url")
+    @Html.TextBoxFor(x=>x.FaceUrl , new {@class = "form-control"})
+
+
+
+    <br />
+    @Html.Label("Sosyal 3")
+    @Html.TextBoxFor(x=>x.InsName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 3 Icon ")
+    @Html.TextBoxFor(x=>x.InsName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 3 Url")
+    @Html.TextBoxFor(x=>x.InsUrl , new {@class = "form-control"})
+    <br />
+
+
+
+    @Html.Label("Sosyal 4")
+    @Html.TextBoxFor(x=>x.LinName , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 4 Icon ")
+    @Html.TextBoxFor(x=>x.LinIcon , new {@class = "form-control"})
+    <br />
+    @Html.Label("Sosyal 4 Url")
+    @Html.TextBoxFor(x=>x.LinUrl , new {@class = "form-control"})
+    <br />
+    <button class="btn btn-outline-primary">Güncelle</button>
+}

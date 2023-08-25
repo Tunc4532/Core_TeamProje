@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concreate
+@model List<UzmanEkip>
+
+<div class="col-xl-4">
+    <div class="card">
+        <div class="card-header border-0">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="mb-0">Ekip Yetekleri</h3>
+                </div>
+                <div class="col text-right">
+                    <a href="#!" class="btn btn-sm btn-primary">Tümünü Gör</a>
+                </div>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <!-- Projects table -->
+            <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                   
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Yetenek</th>
+                        <th scope="col">Yüzdsi</th>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                     @foreach(var item in Model)
+                    {
+                    <tr>
+                        <th scope="row">
+                            @item.UzmanEkipID
+                        </th>
+                        <td>
+                           @item.Tittle
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <span class="mr-2">@item.Value%</span>
+                                <div>
+                                    <div class="progress">
+                                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100" style="width: @item.Value%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

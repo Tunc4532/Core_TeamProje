@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Concreate
+@model List<EkipTanitim>
+
+<div class="section pt-5 pb-3 py-lg-5 px-2 px-lg-4" id="team">
+    <div class="container">
+        <div class="text-center mb-5">
+            s
+            <h2 class="marker marker-center">Ekibimiz İle Tanışın</h2>
+        </div>
+    </div>
+    <div class="carousel carousel-dark slide pb-3" id="carouselTeam" data-bs-ride="carousel" data-aos="zoom-in-up">
+        <div class="container-narrow">
+            <ol class="carousel-indicators">
+                <li class="active" data-bs-target="#carouselTeam" data-bs-slide-to="0" aria-label="Slide 1"></li>
+                <li data-bs-target="#carouselTeam" data-bs-slide-to="1" aria-label="Slide 2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-4">
+                                <div class="card d-block mb-3">
+
+                                    <img class="card-img-top" src="@item.ImageUrl" alt="image" />
+                                    <div class="card-body text-center">
+                                        <div class="h5 mb-1">@item.Name</div>
+                                        <div class="text-muted mb-1">@item.Meslek</div>
+
+                                        <div class="nav text-light justify-content-center">
+                                            <a class="nav-link" href="@item.socialUrl" title="Twitter">
+                                                <i class="@item.socialIcon"></i><span class="menu-title sr-only">@item.socialName</span>
+                                            </a>
+                                            <a class="nav-link" href="@item.FaceUrl" title="Facebook">
+                                                <i class="@item.FaceIcon"></i><span class="menu-title sr-only">@item.FaceName</span>
+                                            </a>
+                                            <a class="nav-link" href="@item.InsUrl" title="Instagram">
+                                                <i class="@item.InsIcon"></i><span class="menu-title sr-only">@item.InsName</span>
+                                            </a>
+                                            <a class="nav-link" href="@item.LinUrl" title="LinkedIn">
+                                                <i class="@item.LinIcon"></i><span class="menu-title sr-only">@item.LinName</span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

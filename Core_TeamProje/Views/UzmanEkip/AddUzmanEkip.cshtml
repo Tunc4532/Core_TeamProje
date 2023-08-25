@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "AddUzmanEkip";
+    Layout = "~/Views/Shared/_AminLayout.cshtml";
+}
+
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Uzman Ekip Hizmet Ekleme Paneli</h3>
+</div>
+<form class="form-group" method="post" >
+    <br />
+    @Html.Label("Hizmet Başlığı");
+    <input type="text" name="Tittle" class="form-control"/>
+    <br />
+    @Html.Label("Hizmet Değeri");
+    <input type="text" name="Value" class="form-control" />
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@using EntityLayer.Concreate
+@model List<CevikEkip>
+
+<div class="row py-3 py-lg-5">
+    <div class="col-lg-6 col-md-5 px-3 order-md-last" data-aos="fade-zoom-in" data-aos-delay="50" data-aos-easing="ease-in-back"><img class="my-3 img-fluid"  src="~/süperajans/images/team/resim4.png" alt="development" /></div>
+    <div class="col-lg-6 col-md-7 px-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="h3 mb-2"> <strong>Çevik Ekibimizin</strong> ihtiyaçlarınızı anlamasına ve size hizmet etmesine izin verin..</div>
+        <p class="text-secondary mb-3">Burası açıklama alanı componeents içinde cevik ekimizin default tarafınddan metin değeri yazılacak .</p>
+        <div class="row">
+            @foreach(var item in Model)
+            {
+            <div class="col-lg-6 mb-2">
+                <div class="border border-3 rounded px-2 py-2 d-flex align-items-center">
+                    <div class="badge bg-success me-2"><i class="@item.IconUrl"></i></div>
+                    <div class="text-secondary fw-bold">@item.Tittle</div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</div>
